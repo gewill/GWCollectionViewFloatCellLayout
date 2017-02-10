@@ -42,12 +42,18 @@ import GWCollectionViewFloatCellLayout
 
 ## Installation
 
-Feel free to drag `GWCollectionViewFloatCellLayout.swift` to your iOS Project. But it's recommended to use Carthage.
+Feel free to drag `GWCollectionViewFloatCellLayout.swift` to your iOS Project. But it's recommended to use Carthage (or CocoaPods).
 
 ### Carthage
 
 ```
 github "gewill/GWCollectionViewFloatCellLayout" >= 1.0
+```
+
+### CocoaPods
+
+```
+pod 'GWCollectionViewFloatCellLayout', '~> 1.0'
 ```
 
 ## Thanks
