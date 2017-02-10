@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CollectionViewController" customModule="GWCollectionViewFloatCellLayout" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CollectionViewController" customModule="GWCollectionViewFloatCellLayout_Demo" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="IGm-uP-jnG" id="dRO-Et-75h"/>
                 <outlet property="layout" destination="FQE-rR-b0n" id="chG-QS-1BE"/>
@@ -24,7 +24,7 @@
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="IGm-uP-jnG">
                     <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <collectionViewLayout key="collectionViewLayout" id="FQE-rR-b0n" customClass="GWCollectionViewFloatCellLayout" customModule="GWCollectionViewFloatCellLayout" customModuleProvider="target"/>
+                    <collectionViewLayout key="collectionViewLayout" id="FQE-rR-b0n" customClass="GWCollectionViewFloatCellLayout" customModule="GWCollectionViewFloatCellLayout"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="nvK-Oa-WDw"/>
                         <outlet property="delegate" destination="-1" id="aTv-YE-xBp"/>

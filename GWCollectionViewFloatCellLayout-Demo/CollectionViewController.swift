@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GWCollectionViewFloatCellLayout
 
 class CollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 

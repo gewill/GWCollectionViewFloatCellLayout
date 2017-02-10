@@ -8,52 +8,54 @@
 
 import UIKit
 
-class GWCollectionViewFloatCellLayout: UICollectionViewLayout {
-    
-    
-    var itemAttributes: [[UICollectionViewLayoutAttributes]] = [[UICollectionViewLayoutAttributes]]()
-    var supplementaryViewAttributes: [UICollectionViewLayoutAttributes] = [UICollectionViewLayoutAttributes]()
-    var contentSize: CGSize = .zero
-    var itemSize: CGSize = .zero
-    var floatItemSize: CGSize = .zero
-    var headerReferenceSize: CGSize = .zero
-    var footerReferenceSize: CGSize = .zero
-    
-    var minimumLineSpacing: CGFloat = 0
-    var minimumInteritemSpacing: CGFloat = 0
-    var sectionInset: UIEdgeInsets = UIEdgeInsets.zero
-    
-    override func prepare() {
+public class GWCollectionViewFloatCellLayout: UICollectionViewLayout {
+
+
+    private var itemAttributes: [[UICollectionViewLayoutAttributes]] = [[UICollectionViewLayoutAttributes]]()
+    private var supplementaryViewAttributes: [UICollectionViewLayoutAttributes] = [UICollectionViewLayoutAttributes]()
+
+    private var contentSize: CGSize = .zero
+
+    public var itemSize: CGSize = .zero
+    public var floatItemSize: CGSize = .zero
+    public var headerReferenceSize: CGSize = .zero
+    public var footerReferenceSize: CGSize = .zero
+
+    public var minimumLineSpacing: CGFloat = 0
+    public var minimumInteritemSpacing: CGFloat = 0
+    public var sectionInset: UIEdgeInsets = UIEdgeInsets.zero
+
+    override public func prepare() {
         guard let collectionView = collectionView else {
             return
         }
-        
+
         if collectionView.numberOfSections == 0 {
             return
         }
-        
+
         let collectionViewWidth = collectionView.bounds.width
-        
+
         var xOffset: CGFloat = 0
         var yOffset: CGFloat = 0
         var contentWidth: CGFloat = 0
         var contentHeight: CGFloat = 0
-        
+
         let section = 0
-        
+
         // set frame for header
         let headerAttributes = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, with: IndexPath(item: 0, section: section))
         headerAttributes.frame = CGRect(x: xOffset, y: yOffset, width: collectionViewWidth, height: headerReferenceSize.height)
         yOffset += headerReferenceSize.height
         contentHeight += headerReferenceSize.height
         self.supplementaryViewAttributes.append(headerAttributes)
-        
+
         // set frame for each elements
         var sectionAttributes = [UICollectionViewLayoutAttributes]()
-        
+
         let maxOfItemsInOneLine: Int = max(Int(floor((floatItemSize.width - sectionInset.left - sectionInset.right + minimumInteritemSpacing) / (itemSize.width + minimumInteritemSpacing))), 1)
         let interitemSpacing: CGFloat = (floatItemSize.width - (CGFloat(maxOfItemsInOneLine) * itemSize.width) - sectionInset.left - sectionInset.right) / CGFloat(maxOfItemsInOneLine - 1)
-        
+
         for item in 0..<collectionView.numberOfItems(inSection: section) {
             let indexPath = IndexPath(item: item, section: section)
             let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
@@ -61,8 +63,8 @@ class GWCollectionViewFloatCellLayout: UICollectionViewLayout {
                 xOffset += sectionInset.left
                 yOffset += sectionInset.top
             }
-            
-            
+
+
             if item == 0 {
                 // float cell
                 attributes.zIndex = 1024
@@ -81,59 +83,59 @@ class GWCollectionViewFloatCellLayout: UICollectionViewLayout {
                     xOffset += itemSize.width + interitemSpacing
                 }
             }
-            
+
             sectionAttributes.append(attributes)
         }
-        
+
         self.itemAttributes.append(sectionAttributes)
-        
+
         xOffset = sectionInset.left
         yOffset += itemSize.height
         yOffset += sectionInset.bottom
-        
+
         // set frame for footer
         let footerAttributes = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, with: IndexPath(item: 0, section: section))
         footerAttributes.frame = CGRect(x: 0, y: yOffset, width: collectionViewWidth, height: footerReferenceSize.height)
         yOffset += footerReferenceSize.height
         contentHeight += footerReferenceSize.height
         self.supplementaryViewAttributes.append(footerAttributes)
-        
-        
+
+
         if yOffset > contentHeight {
             contentHeight = yOffset
         }
         contentWidth = collectionViewWidth
         self.contentSize = CGSize(width: contentWidth, height: contentHeight)
     }
-    
-    override var collectionViewContentSize: CGSize {
+
+    override public var collectionViewContentSize: CGSize {
         return self.contentSize
     }
-    
-    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+
+    override public func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         return self.itemAttributes[indexPath.section][indexPath.item]
     }
-    
-    override func layoutAttributesForSupplementaryView(ofKind elementKind: String, at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+
+    override public func layoutAttributesForSupplementaryView(ofKind elementKind: String, at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         return self.supplementaryViewAttributes[indexPath.section]
     }
-    
-    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        
+
+    override public func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+
         var attributes = [UICollectionViewLayoutAttributes]()
-        
+
         for section in self.itemAttributes {
-            
+
             let filteredArray = section.filter({ rect.intersects($0.frame) })
             attributes.append(contentsOf: filteredArray)
         }
-        
+
         attributes.append(contentsOf: self.supplementaryViewAttributes.filter({ rect.intersects($0.frame) }))
         return attributes
     }
-    
-    override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
+
+    override public func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         return true
     }
-    
+
 }

@@ -1,11 +1,5 @@
 # GWCollectionViewFloatCellLayout
 
-
-
-
-
-
-
 ## Summary
 
 Custom layout for a collection view using vertical scrolling with float cell, like UICollectionViewFlowLayout. Written in **Swift**.
@@ -14,9 +8,19 @@ Custom layout for a collection view using vertical scrolling with float cell, li
 
 ![screencast](./screencast.gif)
 
+
+
+## Requirements
+
+Swift 3.0, iOS 8.0
+
 ## Use
 
 Just set layout properties when `viewDidLoad`
+
+```swift
+import GWCollectionViewFloatCellLayout
+```
 
 ```swift
 	override func viewDidLoad() {
@@ -35,6 +39,16 @@ Just set layout properties when `viewDidLoad`
 ```
 
 
+
+## Installation
+
+Feel free to drag `GWCollectionViewFloatCellLayout.swift` to your iOS Project. But it's recommended to use Carthage.
+
+### Carthage
+
+```
+github "gewill/GWCollectionViewFloatCellLayout" >= 1.0
+```
 
 ## Thanks
 
