@@ -47,13 +47,13 @@ Feel free to drag `GWCollectionViewFloatCellLayout.swift` to your iOS Project.
 ### Carthage
 
 ```
-github "gewill/GWCollectionViewFloatCellLayout" >= 1.0
+github "gewill/GWCollectionViewFloatCellLayout" >= 1.0.0
 ```
 
 ### CocoaPods
 
 ```
-pod 'GWCollectionViewFloatCellLayout', '~> 1.0'
+pod 'GWCollectionViewFloatCellLayout', '~> 1.0.0'
 ```
 
 ## Thanks
