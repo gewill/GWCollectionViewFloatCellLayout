@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BE9D1EEC1E4D7A2E00724785"
+               BlueprintIdentifier = "BE02FC891E4D94030009E4B2"
                BuildableName = "GWCollectionViewFloatCellLayout.framework"
                BlueprintName = "GWCollectionViewFloatCellLayout"
-               ReferencedContainer = "container:GWCollectionViewFloatCellLayout-Demo.xcodeproj">
+               ReferencedContainer = "container:GWCollectionViewFloatCellLayout.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,10 +45,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BE9D1EEC1E4D7A2E00724785"
+            BlueprintIdentifier = "BE02FC891E4D94030009E4B2"
             BuildableName = "GWCollectionViewFloatCellLayout.framework"
             BlueprintName = "GWCollectionViewFloatCellLayout"
-            ReferencedContainer = "container:GWCollectionViewFloatCellLayout-Demo.xcodeproj">
+            ReferencedContainer = "container:GWCollectionViewFloatCellLayout.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -63,10 +63,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BE9D1EEC1E4D7A2E00724785"
+            BlueprintIdentifier = "BE02FC891E4D94030009E4B2"
             BuildableName = "GWCollectionViewFloatCellLayout.framework"
             BlueprintName = "GWCollectionViewFloatCellLayout"
-            ReferencedContainer = "container:GWCollectionViewFloatCellLayout-Demo.xcodeproj">
+            ReferencedContainer = "container:GWCollectionViewFloatCellLayout.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
