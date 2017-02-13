@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "GWCollectionViewFloatCellLayout"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "Custom layout for a collection view using vertical scrolling with float cell, like UICollectionViewFlowLayout. "
 
   # This description is used to generate tags and improve search results.
