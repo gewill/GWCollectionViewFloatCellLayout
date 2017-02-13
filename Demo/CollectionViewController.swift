@@ -14,12 +14,14 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet var layout: GWCollectionViewFloatCellLayout!
 
-
+    var dataCount = 60
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.automaticallyAdjustsScrollViewInsets = false
 
+         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "reloadData", style: .plain, target: self, action: #selector(self.reloadDataButtonClick(_:)))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Flow layout", style: .plain, target: self, action: #selector(self.flowLayoutButtonClick(_:)))
 
         self.collectionView.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
@@ -49,7 +51,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
 
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 60
+        return dataCount
     }
 
 
@@ -99,6 +101,11 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     }
 
     // MARK: - response methods
+    func reloadDataButtonClick(_ sender: UIBarButtonItem) {
+        self.dataCount = 30
+        self.collectionView.reloadData()
+    }
+    
     func flowLayoutButtonClick(_ sender: UIBarButtonItem) {
         let vc = UIStoryboard(name: "main", bundle: nil).instantiateInitialViewController()!
         self.navigationController?.pushViewController(vc, animated: true)

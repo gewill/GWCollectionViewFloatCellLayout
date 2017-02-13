@@ -41,6 +41,9 @@ public class GWCollectionViewFloatCellLayout: UICollectionViewLayout {
         var contentWidth: CGFloat = 0
         var contentHeight: CGFloat = 0
 
+        itemAttributes = [[UICollectionViewLayoutAttributes]]()
+        supplementaryViewAttributes = [UICollectionViewLayoutAttributes]()
+
         let section = 0
 
         // set frame for header
