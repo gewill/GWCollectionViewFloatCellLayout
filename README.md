@@ -4,6 +4,8 @@
 
 Custom layout for a collection view using vertical scrolling with float cell, like UICollectionViewFlowLayout. Written in **Swift**.
 
+iOS 9 above, you can just set `sectionHeadersPinToVisibleBounds = true`
+
 ## Screenshot
 
 ![screencast](./screencast.gif)
